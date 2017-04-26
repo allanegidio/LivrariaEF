@@ -65,6 +65,10 @@
     <Compile Include="Migrations\201704260020423_Initial_Database3.Designer.cs">
       <DependentUpon>201704260020423_Initial_Database3.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201704260136332_criandocontextos.cs" />
+    <Compile Include="Migrations\201704260136332_criandocontextos.Designer.cs">
+      <DependentUpon>201704260136332_criandocontextos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Author.cs" />
     <Compile Include="Models\Book.cs" />
@@ -105,6 +109,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201704260020423_Initial_Database3.resx">
       <DependentUpon>201704260020423_Initial_Database3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704260136332_criandocontextos.resx">
+      <DependentUpon>201704260136332_criandocontextos.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

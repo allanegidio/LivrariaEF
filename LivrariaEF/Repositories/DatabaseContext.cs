@@ -3,6 +3,7 @@ using LivrariaEF.Models.Maps;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
@@ -15,7 +16,8 @@ namespace LivrariaEF.Repositories
         public DatabaseContext()
             : base("LivrariaEFConnectionString")
         {
-
+            Configuration.LazyLoadingEnabled = false;
+            Configuration.ProxyCreationEnabled = false;
             Database.Log = (sql) => Debug.Write(sql);
         }
 
@@ -25,6 +27,10 @@ namespace LivrariaEF.Repositories
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            //modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
+            modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
+            modelBuilder.Conventions.Remove<ManyToManyCascadeDeleteConvention>();
+
             modelBuilder.Configurations.Add(new BookConfig());
             modelBuilder.Configurations.Add(new AuthorConfig());
             modelBuilder.Configurations.Add(new ShelfConfig());

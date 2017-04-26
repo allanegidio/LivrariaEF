@@ -82,7 +82,7 @@ namespace LivrariaEF
         [TestMethod]
         public void ExcluindoAutor()
         {
-            var id = 1;
+            var id = 8;
             var authors = _authorRepository.Get();
             _authorRepository.Delete(id);
             _uow.Commit();
